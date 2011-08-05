@@ -1,9 +1,11 @@
 h1. FIROSOPHYEngine
+
 *Author: Yuki Suga
 *E-mail: ysuga at ysuga.net
 *Date  : since 2011/08/05
 
 h2. Contents
+
 *Objective & Goal
 *Characteristics
 *Target System and Dependency
@@ -11,7 +13,35 @@ h2. Contents
 *Link
 
 h2. Objective & Goal
+
+My goal is to create a robotics system design tool in which event driven archtecture and data flow architecture are well combined.
+
 h2. Characteristics
+
+FIROSOPHY is a robot system development tool that uses a finite state machine algorithm.
+In FIROSOPHY, the robot system has finite state(s) (that is called 'RTState').
+In each RTState, robotics components (like actuators, sensors and controllers) are differently connected.
+Using FIROSOPHY, robotics system topologies are capable of dynamically changing when the robotics components' conditions are changed.
+ 
+FIROSOPHY uses RT-middleware model in which robotics elements (like actuators and sensors) are treated as components (RT-components, RTCs).
+Using RT-middleware, robotic system is developed by connecting RTCs.
+
+FIROSOPHYEngine is the framework that realizes this robotic state machine system.
+
 h2. Target System and Dependency
+
+FIROSOPHYEngine depends on...
+
+OpenRTSystemBuilder: github.com/ysuga/OpenRTSystemBuilder
+OpenStateMachine: github.com/ysuga/OpenStateMachine
+OpenRTM-aist 1.0 Java: http://www.openrtm.org/
+
 h2. Usage and References
+
+Download all dependencies.
+
 h2. Link
+
+*OpenRTM-aist : http://www.openrtm.org
+*Developers Page : http://www.ysuga.net
+
