@@ -3,8 +3,8 @@ package net.ysuga.firosophy.guard;
 import net.ysuga.firosophy.FIROSOPHY;
 import net.ysuga.firosophy.state.RTState;
 import net.ysuga.statemachine.guard.AbstractGuard;
-import net.ysuga.statemachine.guard.GuardParameterMap;
 import net.ysuga.statemachine.state.State;
+import net.ysuga.statemachine.util.ParameterMap;
 
 /**
  * 
@@ -41,8 +41,8 @@ public class NotFoundGuard extends AbstractGuard {
 	 * </div>
 	 */
 	@Override
-	public GuardParameterMap getParameterMap() {
-		GuardParameterMap map = new GuardParameterMap();
+	public ParameterMap getParameterMap() {
+		ParameterMap map = new ParameterMap();
 		map.put(PATHURI, pathUri);
 		return map;
 	}

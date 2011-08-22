@@ -61,6 +61,7 @@ public class FIROSOPHY extends StateMachine {
 	
 	public static final String NOTFOUND = "NotFound";
 	public static final String STATE_EQUALS = "StateEquals";
+	public static final String ALLRTCSACTIVATEACTION = "AllRTCsActivateAction";
 	 
 }
  

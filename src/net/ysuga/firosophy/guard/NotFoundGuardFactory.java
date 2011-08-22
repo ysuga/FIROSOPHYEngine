@@ -11,7 +11,8 @@ package net.ysuga.firosophy.guard;
 import net.ysuga.firosophy.FIROSOPHY;
 import net.ysuga.statemachine.guard.AbstractGuardFactory;
 import net.ysuga.statemachine.guard.Guard;
-import net.ysuga.statemachine.guard.GuardParameterMap;
+import net.ysuga.statemachine.guard.GuardProfile;
+import net.ysuga.statemachine.util.ParameterMap;
 
 /**
  * @author ysuga
@@ -46,8 +47,21 @@ public class NotFoundGuardFactory extends AbstractGuardFactory {
 	 * </div>
 	 */
 	@Override
-	public Guard createGuard(String name, GuardParameterMap parameterMap) {
+	public Guard createGuard(String name, ParameterMap parameterMap) {
 		return new NotFoundGuard(name, parameterMap.get(NotFoundGuard.PATHURI));
+	}
+
+	/**
+	 * <div lang="ja">
+	 * @return
+	 * </div>
+	 * <div lang="en">
+	 * @return
+	 * </div>
+	 */
+	public GuardProfile getGuardProfile() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
 	}
 
 }

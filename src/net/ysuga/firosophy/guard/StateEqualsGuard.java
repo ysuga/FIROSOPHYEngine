@@ -5,8 +5,8 @@ import net.ysuga.rtsbuilder.RTSystemBuilder;
 
 import net.ysuga.rtsbuilder.RTCCondition;
 import net.ysuga.statemachine.guard.AbstractGuard;
-import net.ysuga.statemachine.guard.GuardParameterMap;
 import net.ysuga.statemachine.state.State;
+import net.ysuga.statemachine.util.ParameterMap;
 
 public class StateEqualsGuard extends AbstractGuard {
  
@@ -61,8 +61,8 @@ public class StateEqualsGuard extends AbstractGuard {
 	 * </div>
 	 */
 	@Override
-	public GuardParameterMap getParameterMap() {
-		GuardParameterMap map = new GuardParameterMap();
+	public ParameterMap getParameterMap() {
+		ParameterMap map = new ParameterMap();
 		map.put(PATHURI, pathUri);
 		map.put(RTCCONDITION, rtcCondition.toString());
 		return null;

@@ -12,7 +12,8 @@ import net.ysuga.firosophy.FIROSOPHY;
 import net.ysuga.rtsbuilder.RTCCondition;
 import net.ysuga.statemachine.guard.AbstractGuardFactory;
 import net.ysuga.statemachine.guard.Guard;
-import net.ysuga.statemachine.guard.GuardParameterMap;
+import net.ysuga.statemachine.guard.GuardProfile;
+import net.ysuga.statemachine.util.ParameterMap;
 
 /**
  * @author ysuga
@@ -48,9 +49,22 @@ public class StateEqualsGuardFactory extends AbstractGuardFactory {
 	 * </div>
 	 */
 	@Override
-	public Guard createGuard(String name, GuardParameterMap parameterMap) {
+	public Guard createGuard(String name, ParameterMap parameterMap) {
 		
 		return new StateEqualsGuard(name, parameterMap.get(StateEqualsGuard.PATHURI), RTCCondition.parseString(parameterMap.get(StateEqualsGuard.RTCCONDITION)));
+	}
+
+	/**
+	 * <div lang="ja">
+	 * @return
+	 * </div>
+	 * <div lang="en">
+	 * @return
+	 * </div>
+	 */
+	public GuardProfile getGuardProfile() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
 	}
 
 }

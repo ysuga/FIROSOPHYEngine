@@ -6,18 +6,21 @@
  * @copyright 2011, ysuga.net allrights reserved.
  *
  */
-package net.ysuga.firosophy.state;
+package net.ysuga.firosophy.state.action;
 
+import net.ysuga.firosophy.FIROSOPHY;
+import net.ysuga.firosophy.state.RTState;
 import net.ysuga.rtsbuilder.RTSystemBuilder;
 import net.ysuga.rtsystem.profile.RTSystemProfile;
 import net.ysuga.statemachine.state.State;
-import net.ysuga.statemachine.state.StateAction;
+import net.ysuga.statemachine.state.action.AbstractStateAction;
+import net.ysuga.statemachine.util.ParameterMap;
 
 /**
  * @author ysuga
  *
  */
-public class AllRTCsActivateAction implements StateAction {
+public class AllRTCsActivateAction extends  AbstractStateAction {
 
 	/**
 	 * <div lang="ja">
@@ -28,6 +31,7 @@ public class AllRTCsActivateAction implements StateAction {
 	 * </div>
 	 */
 	public AllRTCsActivateAction() {
+		super(FIROSOPHY.ALLRTCSACTIVATEACTION);
 	}
 
 	/**
@@ -47,6 +51,19 @@ public class AllRTCsActivateAction implements StateAction {
 		if(profile != null) {
 			RTSystemBuilder.activateRTCs(profile);
 		}
+	}
+
+	/**
+	 * <div lang="ja">
+	 * @return
+	 * </div>
+	 * <div lang="en">
+	 * @return
+	 * </div>
+	 */
+	@Override
+	public ParameterMap getParameterMap() {
+		return new ParameterMap();
 	}
 
 }
