@@ -46,6 +46,32 @@ public class NotFoundGuard extends AbstractGuard {
 		map.put(PATHURI, pathUri);
 		return map;
 	}
+
+	/**
+	 * <div lang="ja">
+	 * @param state
+	 * </div>
+	 * <div lang="en">
+	 * @param state
+	 * </div>
+	 */
+	public void onInitialize(State state) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	/**
+	 * <div lang="ja">
+	 * @param state
+	 * </div>
+	 * <div lang="en">
+	 * @param state
+	 * </div>
+	 */
+	public void onFinalize(State state) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
 	 
 }
  

@@ -66,4 +66,18 @@ public class AllRTCsActivateAction extends  AbstractStateAction {
 		return new ParameterMap();
 	}
 
+	/**
+	 * <div lang="ja">
+	 * @param parameterMap
+	 * </div>
+	 * <div lang="en">
+	 * @param parameterMap
+	 * </div>
+	 */
+	@Override
+	public void setParameterMap(ParameterMap parameterMap) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
 }

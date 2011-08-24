@@ -46,4 +46,17 @@ public class AllRTCsActivateActionFactory extends AbstractStateActionFactory {
 		return new AllRTCsActivateAction();
 	}
 
+	
+	/**
+	 * <div lang="ja">
+	 * @return
+	 * </div>
+	 * <div lang="en">
+	 * @return
+	 * </div>
+	 */
+	public StateAction createStateAction() {
+		return new AllRTCsActivateAction();
+	}
+
 }

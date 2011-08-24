@@ -6,12 +6,28 @@ import java.util.logging.Logger;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import net.ysuga.firosophy.FIROSOPHY;
 import net.ysuga.rtsbuilder.RTSystemBuilder;
 import net.ysuga.rtsystem.profile.RTSystemProfile;
+import net.ysuga.statemachine.exception.InvalidFSMFileException;
 import net.ysuga.statemachine.state.DefaultState;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
+/**
+ * 
+ * <div lang="ja">
+ * OpenRTMのRTシステムを有するState．
+ * </div>
+ * <div lang="en">
+ *
+ * </div>
+ * @author ysuga
+ *
+ */
 public class RTState extends DefaultState {
  
 	private static  Logger logger;
@@ -42,10 +58,20 @@ public class RTState extends DefaultState {
 		super(name);
 		try {
 			setFileName(null);
+			setKind(FIROSOPHY.RTSTATE);
 		} catch (Exception ex) {
 			
 		}
 	}
+	
+
+	public RTState(Node node) throws InvalidFSMFileException {
+		super("");
+		load(node);
+		setKind(FIROSOPHY.RTSTATE);
+
+	}
+	
 	
 	
 	/**
@@ -88,5 +114,41 @@ public class RTState extends DefaultState {
 		}
 	}
 
+	
+
+	/**
+	 * <div lang="ja">
+	 * @param xmlDocument
+	 * @return
+	 * </div>
+	 * <div lang="en">
+	 * @param xmlDocument
+	 * @return
+	 * </div>
+	 */
+	@Override
+	public Element toElement(Document xmlDocument) {
+		return super.toElement(xmlDocument);
+	}
+
+
+	/**
+	 * <div lang="ja">
+	 * @param node
+	 * @throws InvalidFSMFileException
+	 * </div>
+	 * <div lang="en">
+	 * @param node
+	 * @throws InvalidFSMFileException
+	 * </div>
+	 */
+	@Override
+	public void load(Node node) throws InvalidFSMFileException {
+		super.load(node);
+		
+		
+	}
+
+	
 }
  
