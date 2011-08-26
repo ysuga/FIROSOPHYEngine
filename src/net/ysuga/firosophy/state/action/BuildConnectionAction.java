@@ -20,7 +20,7 @@ import net.ysuga.statemachine.util.ParameterMap;
  * @author ysuga
  *
  */
-public class AllRTCsActivateAction extends  AbstractStateAction {
+public class BuildConnectionAction extends  AbstractStateAction {
 
 	/**
 	 * <div lang="ja">
@@ -30,8 +30,8 @@ public class AllRTCsActivateAction extends  AbstractStateAction {
 	 * Constructor
 	 * </div>
 	 */
-	public AllRTCsActivateAction() {
-		super(FIROSOPHY.ALLRTCSACTIVATEACTION);
+	public BuildConnectionAction() {
+		super(FIROSOPHY.BUILDCONNECTIONACTION);
 	}
 
 	/**
@@ -49,7 +49,7 @@ public class AllRTCsActivateAction extends  AbstractStateAction {
 		RTState rtState = (RTState)state;
 		RTSystemProfile profile = rtState.getRTSystemProfile();
 		if(profile != null) {
-			RTSystemBuilder.activateRTCs(profile);
+			RTSystemBuilder.buildConnection(profile);
 		}
 	}
 

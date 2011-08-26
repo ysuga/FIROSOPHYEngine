@@ -1,9 +1,13 @@
 package net.ysuga.firosophy.guard;
 
-import net.ysuga.firosophy.FIROSOPHY;
-import net.ysuga.rtsbuilder.RTSystemBuilder;
+import java.util.Set;
 
+import net.ysuga.firosophy.FIROSOPHY;
+import net.ysuga.firosophy.state.RTState;
 import net.ysuga.rtsbuilder.RTCCondition;
+import net.ysuga.rtsbuilder.RTSystemBuilder;
+import net.ysuga.rtsystem.profile.Component;
+import net.ysuga.rtsystem.profile.RTSystemProfile;
 import net.ysuga.statemachine.guard.AbstractGuard;
 import net.ysuga.statemachine.state.State;
 import net.ysuga.statemachine.util.ParameterMap;
@@ -28,8 +32,20 @@ public class StateEqualsGuard extends AbstractGuard {
 	 * </div>
 	 */
 	public boolean operate(State state) throws Exception {
-		RTCCondition currentCondition = RTSystemBuilder.getComponentCondition(pathUri);
-		return currentCondition.equals(rtcCondition);
+		if(!pathUri.equals("any")) {
+			RTCCondition currentCondition = RTSystemBuilder.getComponentCondition(pathUri);
+			return currentCondition.equals(rtcCondition);
+		} else {
+			RTSystemProfile profile = ((RTState)state).getRTSystemProfile();
+			Set<Component> componentSet = profile.componentSet;
+			for(Component component : componentSet) {
+				RTCCondition currentCondition = RTSystemBuilder.getComponentCondition(component);
+				if(currentCondition.equals(rtcCondition)) {
+					return true;
+				}
+			}
+			return false;
+		}
 	}
 	
 	/**
@@ -65,7 +81,7 @@ public class StateEqualsGuard extends AbstractGuard {
 		ParameterMap map = new ParameterMap();
 		map.put(PATHURI, pathUri);
 		map.put(RTCCONDITION, rtcCondition.toString());
-		return null;
+		return map;
 	}
 
 	/**
