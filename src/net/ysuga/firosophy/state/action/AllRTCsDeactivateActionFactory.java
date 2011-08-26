@@ -17,7 +17,7 @@ import net.ysuga.statemachine.util.ParameterMap;
  * @author ysuga
  *
  */
-public class AllRTCsActivateActionFactory extends AbstractStateActionFactory {
+public class AllRTCsDeactivateActionFactory extends AbstractStateActionFactory {
 
 	/**
 	 * <div lang="ja">
@@ -27,8 +27,8 @@ public class AllRTCsActivateActionFactory extends AbstractStateActionFactory {
 	 * Constructor
 	 * </div>
 	 */
-	public AllRTCsActivateActionFactory() {
-		super(FIROSOPHY.ALLRTCSACTIVATEACTION);
+	public AllRTCsDeactivateActionFactory() {
+		super(FIROSOPHY.ALLRTCSDEACTIVATEACTION);
 	}
 
 	/**
@@ -42,7 +42,7 @@ public class AllRTCsActivateActionFactory extends AbstractStateActionFactory {
 	 * </div>
 	 */
 	public StateAction buildStateAction(ParameterMap parameterMap) {
-		return new AllRTCsActivateAction();
+		return new AllRTCsDeactivateAction();
 	}
 
 	
@@ -55,7 +55,7 @@ public class AllRTCsActivateActionFactory extends AbstractStateActionFactory {
 	 * </div>
 	 */
 	public StateAction createStateAction() {
-		return new AllRTCsActivateAction();
+		return new AllRTCsDeactivateAction();
 	}
 
 }
