@@ -7,7 +7,6 @@ import net.ysuga.firosophy.state.RTState;
 import net.ysuga.rtsbuilder.RTCCondition;
 import net.ysuga.rtsbuilder.RTSystemBuilder;
 import net.ysuga.rtsystem.profile.Component;
-import net.ysuga.rtsystem.profile.RTSProperties;
 import net.ysuga.rtsystem.profile.RTSystemProfile;
 import net.ysuga.statemachine.guard.AbstractGuard;
 import net.ysuga.statemachine.state.State;
@@ -39,7 +38,8 @@ public class StateEqualsGuard extends AbstractGuard {
 		} else {
 			RTSystemProfile profile = ((RTState)state).getRTSystemProfile();
 			Set<Component> componentSet = profile.componentSet;
-			for(RTSProperties component : componentSet) {
+
+			for(Component component : componentSet) {
 				RTCCondition currentCondition = RTSystemBuilder.getComponentCondition(component);
 				if(currentCondition.equals(rtcCondition)) {
 					return true;

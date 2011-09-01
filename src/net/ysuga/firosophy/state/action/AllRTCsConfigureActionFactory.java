@@ -8,6 +8,7 @@
  */
 package net.ysuga.firosophy.state.action;
 
+
 import net.ysuga.firosophy.FIROSOPHY;
 import net.ysuga.statemachine.state.action.AbstractStateActionFactory;
 import net.ysuga.statemachine.state.action.StateAction;
@@ -41,6 +42,7 @@ public class AllRTCsConfigureActionFactory extends AbstractStateActionFactory {
 	 * @return
 	 * </div>
 	 */
+	@Override
 	public StateAction buildStateAction(ParameterMap parameterMap) {
 		return new AllRTCsConfigureAction();
 	}
