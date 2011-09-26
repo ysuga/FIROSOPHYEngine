@@ -42,7 +42,6 @@ public class AllRTCsConfigureActionFactory extends AbstractStateActionFactory {
 	 * @return
 	 * </div>
 	 */
-	@Override
 	public StateAction buildStateAction(ParameterMap parameterMap) {
 		return new AllRTCsConfigureAction();
 	}
