@@ -7,6 +7,7 @@ import net.ysuga.firosophy.state.RTState;
 import net.ysuga.rtsbuilder.RTCCondition;
 import net.ysuga.rtsbuilder.RTSystemBuilder;
 import net.ysuga.rtsystem.profile.Component;
+import net.ysuga.rtsystem.profile.RTSObject;
 import net.ysuga.rtsystem.profile.RTSystemProfile;
 import net.ysuga.statemachine.guard.AbstractGuard;
 import net.ysuga.statemachine.state.State;
@@ -39,7 +40,7 @@ public class StateEqualsGuard extends AbstractGuard {
 			RTSystemProfile profile = ((RTState)state).getRTSystemProfile();
 			Set<Component> componentSet = profile.componentSet;
 
-			for(Component component : componentSet) {
+			for(RTSObject component : componentSet) {
 				RTCCondition currentCondition = RTSystemBuilder.getComponentCondition(component);
 				if(currentCondition.equals(rtcCondition)) {
 					return true;
@@ -51,7 +52,7 @@ public class StateEqualsGuard extends AbstractGuard {
 	
 	/**
 	 * <div lang="ja">
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
 	 * @param name
 	 * @param componentPathUri
 	 * @param stateCondition
@@ -94,7 +95,7 @@ public class StateEqualsGuard extends AbstractGuard {
 	 * </div>
 	 */
 	public void onInitialize(State state) {
-		// TODO ©“®¶¬‚³‚ê‚½ƒƒ\ƒbƒhEƒXƒ^ƒu
+		// TODO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Eï¿½Xï¿½^ï¿½u
 		
 	}
 
@@ -107,7 +108,7 @@ public class StateEqualsGuard extends AbstractGuard {
 	 * </div>
 	 */
 	public void onFinalize(State state) {
-		// TODO ©“®¶¬‚³‚ê‚½ƒƒ\ƒbƒhEƒXƒ^ƒu
+		// TODO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Eï¿½Xï¿½^ï¿½u
 		
 	}
 	 
