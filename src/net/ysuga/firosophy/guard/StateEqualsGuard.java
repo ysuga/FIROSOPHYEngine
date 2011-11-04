@@ -6,7 +6,7 @@ import net.ysuga.firosophy.FIROSOPHY;
 import net.ysuga.firosophy.state.RTState;
 import net.ysuga.rtsbuilder.RTCCondition;
 import net.ysuga.rtsbuilder.RTSystemBuilder;
-import net.ysuga.rtsystem.profile.Component;
+import net.ysuga.rtsystem.profile.RTComponent;
 import net.ysuga.rtsystem.profile.RTSObject;
 import net.ysuga.rtsystem.profile.RTSystemProfile;
 import net.ysuga.statemachine.guard.AbstractGuard;
@@ -34,14 +34,14 @@ public class StateEqualsGuard extends AbstractGuard {
 	 */
 	public boolean operate(State state) throws Exception {
 		if(!pathUri.equals("any")) {
-			RTCCondition currentCondition = RTSystemBuilder.getComponentCondition(pathUri);
+			RTCCondition currentCondition = RTSystemBuilder.getComponentConditionFromPath(pathUri);//.getComponentCondition(pathUri);
 			return currentCondition.equals(rtcCondition);
 		} else {
 			RTSystemProfile profile = ((RTState)state).getRTSystemProfile();
-			Set<Component> componentSet = profile.componentSet;
+			Set<RTComponent> componentSet = profile.componentSet;
 
 			for(RTSObject component : componentSet) {
-				RTCCondition currentCondition = RTSystemBuilder.getComponentCondition(component);
+				RTCCondition currentCondition = RTSystemBuilder.getComponentConditionFromRecord(component);
 				if(currentCondition.equals(rtcCondition)) {
 					return true;
 				}
